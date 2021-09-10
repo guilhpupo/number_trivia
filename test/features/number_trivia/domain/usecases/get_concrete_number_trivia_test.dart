@@ -16,7 +16,7 @@ void main() {
   const tNumberTrivia = NumberTrivia(number: tNumber, text: 'test');
 
   test('should get trivia for the number from repository', () async {
-    when(() => mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber))
+    when(() => mockNumberTriviaRepository.getConcreteNumberTrivia(any()))
         .thenAnswer((_) async => const Right(tNumberTrivia));
 
     final result = await usecase(const Params(tNumber));
